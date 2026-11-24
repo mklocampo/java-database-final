@@ -1,0 +1,94 @@
+###---------------stores
+POST http://localhost:8080/store
+Content-Type: application/json
+
+{
+    "name": "store test",
+    "address": "address store test"
+}
+###
+GET http://localhost:8080/store/validate/1
+###
+POST http://localhost:8080/store/placeOrder
+Content-Type: application/json
+
+{
+    "storeId": 1,
+    "customerName": "customerName test",
+    "customerEmail": "customerEmail test",
+    "customerPhone": "customerPhone test",
+    "datetime": null,
+    "purchaseProduct": [],
+    "totalPrice": 500
+}
+
+
+
+###--------------reviews
+GET http://localhost:8080/reviews
+###
+GET http://localhost:8080/reviews/1/1
+
+
+
+
+
+###--------------products
+POST http://localhost:8080/product
+Content-Type: application/json
+
+{
+    "name": "product1",
+    "category": "Mobile",
+    "price": 200,
+    "sku": "sku1"
+}
+###
+GET http://localhost:8080/product/product/1
+###
+PUT http://localhost:8080/product
+Content-Type: application/json
+
+{
+    "name": "product1",
+    "category": "Mobile",
+    "price": 200,
+    "sku": "sku1"
+}
+###
+GET http://localhost:8080/product/category/test1/Mobile
+###
+GET http://localhost:8080/product
+###
+GET http://localhost:8080/product/filter/Mobile/1
+###
+DELETE http://localhost:8080/product/1
+###
+GET http://localhost:8080/product/searchProduct/test1
+
+###--------------inventories
+POST http://localhost:8080/inventory
+Content-Type: application/json
+
+{
+    "content": "This is a new post!",
+    "userId": 1
+}
+###
+PUT http://localhost:8080/inventory
+Content-Type: application/json
+
+{
+    "content": "This is a new post!",
+    "userId": 1
+}
+###
+GET http://localhost:8080/inventory/1
+###
+GET http://localhost:8080/inventory/filter/Mobile/test1/1
+###
+GET http://localhost:8080/inventory/search/test1/1
+###
+DELETE http://localhost:8080/inventory/1
+###
+GET http://localhost:8080/inventory/validate/8/1/2
