@@ -1,4 +1,6 @@
-const apiURL = 'http://localhost:8080';
+import 'dotenv/config';
+
+const apiURL = process.env.API_URL;
 let students = [];
 let Ordercount = 1;
 let deleteRow = [];
