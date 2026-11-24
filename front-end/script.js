@@ -1,6 +1,7 @@
-import 'dotenv/config';
-
-const apiURL = process.env.API_URL;
+//import { CONFIG } from './config.js';
+//console.log(CONFIG.API_URL);
+const apiURL = CONFIG.API_URL;
+//const apiURL = 'http://localhost:8080';
 let students = [];
 let Ordercount = 1;
 let deleteRow = [];

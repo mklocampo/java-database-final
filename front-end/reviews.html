@@ -16,13 +16,11 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
-
     <link rel="stylesheet" href="frontend.css">
 
     <link rel="shortcut icon" href="images/Logo.png" type="image/x-icon">
 
-
+    <script src="./config.js"></script>
 
 </head>
 
@@ -76,9 +74,10 @@
     </div>
 
     <script>
-        window.onload = () => {
-            
-            const url = window.location.href;
+ const apiURL = CONFIG.API_URL;
+        window.onload = () => {  
+            //const url = window.location.href;
+           
             const params = new URLSearchParams(window.location.search);
             let storeId = params.get('storeId');
             let productName = params.get('productName');
@@ -96,7 +95,8 @@
 
 
         function getReviews(storeId, productId) {
-            url = `URL/reviews/${storeId}/${productId}`;
+            //url = `URL/reviews/${storeId}/${productId}`;
+             url = `${apiURL}/reviews/${storeId}/${productId}`;
             fetch(url, {
                 method: "GET",
                 headers: { "content-type": "application/json" }
@@ -114,7 +114,6 @@
 
         function createReview(reviews) {
             try {
-
 
                 let allColumns = document.querySelectorAll('.col');
                 let count = 0;
@@ -166,7 +165,6 @@
         }
 
         function goBackToInventory() {
-            
             button=document.getElementById('backButton');
             storeId=button.value;
             location.href = `index.html?id=navBar3&storeid=${storeId}`;
